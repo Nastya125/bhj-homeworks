@@ -11,6 +11,7 @@ let currentTime = new Date().getTime();
 
 
 
+const counter = document.getElementById("clicker__counter");
 
 function changeImg(){
     if(image.width == bigSize){
@@ -20,7 +21,6 @@ function changeImg(){
     }
 
     count++
-    let counter = document.getElementById("clicker__counter");
     counter.textContent = `${count}`;
 
 
@@ -34,7 +34,7 @@ function changeImg(){
 
 
     speedClick = (1 / idleTimeSec).toFixed(2); 
-    let speadCounter = document.getElementById("clicker__spead");
+    const speadCounter = document.getElementById("clicker__spead");
     speadCounter.textContent = `${speedClick}`;
     
 }

@@ -18,14 +18,14 @@ let loseCounter = 0;
         }  
     }
     
-    function checkWin(winMole, loseMole){
+    function checkWin(winCounter, loseCounter){
         
-        if(winMole === 10){
+        if(winCounter === 10){
             alert("Вы победили");
             location.reload();
         }
 
-        if(loseMole === 5){
+        if(loseCounter === 5){
             alert("Вы проиграли!");
             location.reload();
         }
