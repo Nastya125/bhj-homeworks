@@ -19,7 +19,7 @@ for (let i = 0; i < arrMenuLinks.length; i++){
         }
 
         if(menuWithSubMenu !== null && count === 1){
-            menuWithSubMenu.className = targetItem.className.replace(' menu_active', '');
+            menuWithSubMenu.className = menuWithSubMenu.className.replace(' menu_active', '');
             count = 0;
             return false
         }
