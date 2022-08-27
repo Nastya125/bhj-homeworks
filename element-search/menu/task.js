@@ -1,30 +1,29 @@
 
-const menuLinks = document.querySelectorAll("a.menu__link");
-const arrMenuLinks = Array.from(menuLinks);
-let count = 0;
+
+const links = Array.from(document.querySelectorAll(".menu__link")); 
 
 
 
-for (let i = 0; i < arrMenuLinks.length; i++){
-    arrMenuLinks[i].onclick = function() {
-        console.log("Клик");
-   
-    let menuWithSubMenu = arrMenuLinks[i].closest("li.menu__item").querySelector('ul.menu_sub');
+for (let link of links) { 
     
+    link.onclick = function() {
+        const parent = link.parentElement;
 
-        if(menuWithSubMenu !== null && count === 0){
-            menuWithSubMenu.className += ' menu_active';
-            count = 1;
-            return false;
+        if(parent.querySelector(".menu_sub").className === "menu menu_sub"){
+            parent.querySelector(".menu_sub").className = "menu menu_sub menu_active";
+        } else {
+            parent.querySelector(".menu_sub").className = "menu menu_sub";
         }
 
-        if(menuWithSubMenu !== null && count === 1){
-            menuWithSubMenu.className = menuWithSubMenu.className.replace(' menu_active', '');
-            count = 0;
-            return false
+        if (link.closest(".menu_main")) {
+			return false
         }
-
-
     }
+      
 }
+
+
+
+
+
 
