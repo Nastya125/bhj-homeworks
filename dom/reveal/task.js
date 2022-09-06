@@ -15,9 +15,6 @@ function isVisible(element){
     return true;
 }
 
-
-
-
 window.addEventListener('scroll', () => {
     
 
