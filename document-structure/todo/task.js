@@ -8,7 +8,6 @@ const taskList = document.getElementById('tasks__list')
 buttonAdd.addEventListener('click', (e) => {
     e.preventDefault()
     addTask();
-    console.log(field.value)
 })
 
 
@@ -33,7 +32,6 @@ function addTask(){
 
             buttonDelete.addEventListener('click', () => {
             
-            console.log('клик на обработчик');
             taskList.removeChild(div)
         })
 
