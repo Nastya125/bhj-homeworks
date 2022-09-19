@@ -14,7 +14,7 @@ buttonAdd.addEventListener('click', (e) => {
 
 function addTask(){ 
 
-    if(field.value !== ''){
+    if(field.value.trim() !== ''){
 
         const div = document.createElement('div');
         div.classList.add = 'task';
