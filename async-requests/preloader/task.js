@@ -1,5 +1,4 @@
 const items = document.getElementById('items');
-const item = document.querySelector('.item')
 const img = document.getElementById('loader');
 
 
@@ -15,7 +14,6 @@ xhr.onload = function() {
 
     showValute(valute);
 
-//    console.log(valute);
 }
 
 xhr.onreadystatechange = function() {
@@ -35,40 +33,20 @@ function showValute(jsonObj){
     const divItemCurrency = document.createElement('div');
     divItemCurrency.classList.add = 'item__currency';
     divItemCurrency.textContent = 'руб.';
-    
+
         const allValute = Object.values(jsonObj) ;
         allValute.forEach(value => {
             
             divItemCode.textContent = value.CharCode;
             divItemValue.textContent = value.Value;
 
-            const divAdd = `<div class="item__code">${divItemCode.textContent}</div>
+            const divAdd = `<div class="item">
+            <div class="item__code">${divItemCode.textContent}</div>
             <div class="item__value">${divItemValue.textContent}</div>
             <div class="item__currency">руб.</div>`
 
-
-            item.appendChild('divItemCode');
-            item.appendChild('divItemValue');
-            item.appendChild('divItemCurrency');
-          //  item.insertAdjacentHTML('beforeend', divAdd);
-           
-                    
+            items.insertAdjacentHTML('beforeend', divAdd);     
 
         })
-
-
-   // items.appendChild('divItemCode');
-   // items.appendChild('divItemValue');
-   // items.appendChild('divItemCurrency');
-
-
        
-    }
-    
-
-
-
-
-
-        
-
+}
