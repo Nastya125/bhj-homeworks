@@ -12,15 +12,13 @@ xhr.onload = function() {
     let data = xhr.response;
     let valute = data.response.Valute;
 
+    if(xhr.readyState ===  xhr.DONE && xhr.status == 200) {
+        img.classList.remove('loader_active');    
+    };
+
     showValute(valute);
 
 }
-
-xhr.onreadystatechange = function() {
-    if(xhr.readyState ===  xhr.DONE) {
-         img.classList.remove('loader_active');    
-     };
- };
 
 function showValute(jsonObj){
 
